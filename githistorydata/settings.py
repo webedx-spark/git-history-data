@@ -1,10 +1,12 @@
 import json
+import os
 
+WORKSPACE_DIR = os.environ.get('WORKSPACE')
 
 class Settings:
     """ Asettings object that is responsible of managing a single settings file """
 
-    def __init__(self, settings_file_path="settings.json"):
+    def __init__(self, settings_file_path=f"{WORKSPACE_DIR}/sync-github-raw-data/git-history-data/settings.json"):
         """ Initialize a Settings object """
         self._settings_file_path = settings_file_path
         self._settings_dict = {}
